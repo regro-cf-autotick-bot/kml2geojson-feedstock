@@ -1,5 +1,5 @@
 {% set name = "kml2geojson" %}
-{% set version = "4.0.2" %}
+{% set version = "5.0.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kml2geojson-{{ version }}.tar.gz
-  sha256: 4251316f689741d38136118d66ba1fcb5b09b3554aea126d2abc352816b83c22
+  sha256: 391dfdd2964334643cc32c8b8a2ede58abb4dfcccbeba3080043b51737d50475
 
 build:
   number: 0
