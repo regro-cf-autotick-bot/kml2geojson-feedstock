@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kml2geojson-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kml2geojson-{{ version }}.tar.gz
   sha256: 76a69f598e55d2eff90332e87ee9480c36120f60e6f5d6b5aaeba63ce92a3dfa
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - k2g = kml2geojson.cli:k2g
@@ -20,11 +20,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6,<4.0
+    - python {{ python_min }}
     - poetry >=1,<2
   run:
     - click >=8.0.1,<9.0.0
-    - python >=3.6,<4.0
+    - python >={{ python_min }},<4.0
 
 test:
   imports:
@@ -34,6 +34,7 @@ test:
     - k2g --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/kml2geojson/
